@@ -10,7 +10,7 @@ let operandA = '';
 let operandB = '';
 let operator = '';
 // let operation = '';
-// let answer = '';
+let answer = '';
 let fase = 'A';
 let afterEqual = false;
 
@@ -75,29 +75,33 @@ function getUserInput() {
                 console.log('fase :', fase);
                 console.log('operator :', operator);
             }
-                console.log('texto do div Display: ', operationDisplay.textContent)      
-            resultDisplay.textContent = operate();
+            console.log('texto do div Display: ', operationDisplay.textContent);
+            if ( answer = '')
+            resultDisplay.textContent = operate(answer, operandB);
         })
     })
 }
 
-function operate() {
+function operate(a, b) {
     if (operandA === '' || operator === '' || operandB === '') {
         return '';
     }
 
+    numberA = Number(a);
+    numberB = Number(b);
+
     switch (operator) {
         case '+':
-            result = add(Number(operandA), Number(operandB));
+            result = add(numberA, numberB);
             break;
         case '-':
-            result = subtract(Number(operandA), Number(operandB));
+            result = subtract(numberA, numberB);
             break;
         case '*':
-            result = multiply(Number(operandA), Number(operandB));
+            result = multiply(numberA, numberB);
             break;
         case '/':
-            result = divide(Number(operandA), Number(operandB));
+            result = divide(numberA, numberB);
             break;
         default:
             return '';
@@ -106,23 +110,23 @@ function operate() {
 }
 
 function add(operandA, operandB) {
-    let result = Number((operandA + operandB).toFixed(10));
+    let result = Number((operandA + operandB).toFixed(20));
     return result;
 }
 
 function subtract(operandA, operandB) {
-    let result = Number((operandA - operandB).toFixed(10));
+    let result = Number((operandA - operandB).toFixed(20));
     return result;
 }
 
 function multiply(operandA, operandB) {
-    let result = Number((operandA * operandB).toFixed(10));
+    let result = Number((operandA * operandB).toFixed(0));
     return result;
 }
 
 function divide(operandA, operandB) {
     if (operandB === 0) return '';
-    let result = Number((operandA / operandB).toFixed(10));
+    let result = Number((operandA / operandB).toFixed(20));
     return result;
 }
 

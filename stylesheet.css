@@ -1,0 +1,106 @@
+button {
+    font-size: 40px;
+    font-weight: lighter;
+    color: white;
+    background-color: hsl(0, 0%, 50%);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: 100%;
+    margin: 0;
+}
+button:hover {
+    background-color: hsl(120, 40%, 40%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+}
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.calculator {
+    display: flex;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    max-height: 100vh;
+    aspect-ratio: 9 / 16;
+    background-color: hsl(0, 0%, 80%);
+    padding: .8em;
+    gap: .5em;
+}
+.display {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 30%;
+    width: 100%;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 20px;
+}
+.operationDisplay {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+    color: white;
+    font-size: 4em;
+    text-align: right;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+    padding: .2em;
+}
+.resultDisplay {
+    display: block;
+    flex: 0 0 20%;
+    color: hsl(210, 80%, 80%);
+    font-size: 2em;
+    text-align: right;
+    white-space: nowrap;
+    padding: .2em;
+}
+.keysContainer {
+    display: flex;
+    flex-flow: column wrap;
+    flex: 1 1 auto;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: .5em;
+}
+.keysRow {
+    display: flex;
+    flex: 1 1 auto;
+    gap: .5em;
+    margin: 0;
+}
+.operators, .parentheses {
+    background-color: hsl(210, 48%, 59%);
+}
+#equalKey {
+    background-color: hsl(210, 80%, 20%);
+}
+#equalKey:hover {
+    background-color: hsl(120, 40%, 40%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+}
+#equalKey:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+#acKey {
+    background-color: hsl(0, 100%, 65%);
+}
+#acKey:hover {
+    background-color: hsl(0, 100%, 50%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+}
+#acKey:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
